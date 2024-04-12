@@ -1,6 +1,6 @@
-import React from "react";
-import classes from "./Modal.module.css";
-import ReactDOM from "react-dom";
+import React from 'react';
+import classes from './Modal.module.css';
+import ReactDOM from 'react-dom';
 
 //Using react portal to create a backdrop to avoid excessive div tags when react app is being rendered
 
@@ -24,7 +24,7 @@ const ModalOverLay = (props) => {
   //END
 };
 
-const modalElements = document.getElementById("modal-overlay");
+const modalElements = document.getElementById('modal-overlay');
 
 const Modal = (props) => {
   //Rendered the components above

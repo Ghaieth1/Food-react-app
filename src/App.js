@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import TheNav from "./components/Header/TheNav";
-import Sections from "./components/Sections/Sections";
-import Cart from "./components/Cart/Cart";
-import CartProvider from "./components/store/CartProvider";
-import TheFooter from "./components/Footer/TheFooter";
-import Swal from "sweetalert2";
+import React, { useState } from 'react';
+import TheNav from './components/Header/TheNav';
+import Sections from './components/Sections/Sections';
+import Cart from './components/Cart/Cart';
+import CartProvider from './components/store/CartProvider';
+import TheFooter from './components/Footer/TheFooter';
+import Swal from 'sweetalert2';
 
 const App = () => {
   //Using useState hook
@@ -18,7 +18,6 @@ const App = () => {
 
   const onCloseCartHandler = () => {
     setCartIsShown(false);
-    
   };
   //END
 
@@ -27,9 +26,9 @@ const App = () => {
     setCartIsShown(false);
 
     Swal.fire({
-      title: "Successful!",
-      text: "Your order is on the way",
-      icon: "success",
+      title: 'Successful!',
+      text: 'Your order is on the way',
+      icon: 'success',
     });
   };
 

@@ -1,5 +1,5 @@
-import React, { useReducer } from "react";
-import CartContext from "./cartcontext";
+import React, { useReducer } from 'react';
+import CartContext from './cartcontext';
 
 //Created a default state for the cart to be used in the reducer function and the reducer hook defalt state;
 const defaultCartState = {
@@ -10,7 +10,7 @@ const defaultCartState = {
 
 //The Reducer function loic
 const cartReducer = (state, action) => {
-  if (action.type === "ADD") {
+  if (action.type === 'ADD') {
     //Finding the accurate Total Amount
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.amount;
@@ -54,7 +54,7 @@ const cartReducer = (state, action) => {
   }
   //END
 
-  if (action.type === "REMOVE") {
+  if (action.type === 'REMOVE') {
     //Checking if an item already exists in the Cart, if yes findng it's index , if no , giving it a value of null
     const existingItemIndex = state.items.findIndex(
       (item) => item.id === action.id
@@ -108,7 +108,7 @@ const CartProvider = (props) => {
   //dispatching the cart ADD action
   const addItemHandler = (item) => {
     dispatchCartAction({
-      type: "ADD",
+      type: 'ADD',
       item: item,
     });
   };
@@ -116,7 +116,7 @@ const CartProvider = (props) => {
   //dispatching the cart REMOVE action
   const removeItemHandler = (id) => {
     dispatchCartAction({
-      type: "REMOVE",
+      type: 'REMOVE',
       id: id,
     });
   };

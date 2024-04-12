@@ -1,5 +1,5 @@
-import React from "react";
-import classes from "./CartItem.module.css";
+import React from 'react';
+import classes from './CartItem.module.css';
 
 const CartItem = (props) => {
   //Converting the prices to two decimal place
@@ -17,7 +17,7 @@ const CartItem = (props) => {
             <img
               className={classes.item_image}
               src={props.src}
-              alt="food"
+              alt='food'
             ></img>
           </div>
           <div className={classes.item_value}>
@@ -32,10 +32,10 @@ const CartItem = (props) => {
         </div>
         <div className={classes.item_buttons}>
           <div onClick={props.onRemove}>
-            <i className="bi bi-dash"></i>
+            <i className='bi bi-dash'></i>
           </div>
           <div onClick={props.onAdd}>
-            <i className="bi bi-plus"></i>
+            <i className='bi bi-plus'></i>
           </div>
         </div>
       </div>

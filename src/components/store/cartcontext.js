@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 //Creating Storing the context values
 const CartContext = React.createContext({

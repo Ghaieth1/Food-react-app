@@ -1,5 +1,5 @@
-import React from "react";
-import TheNavbar from "./TheNavbar";
+import React from 'react';
+import TheNavbar from './TheNavbar';
 
 const TheNav = (props) => {
   //Rendering the Navbar

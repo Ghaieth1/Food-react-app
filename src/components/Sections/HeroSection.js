@@ -3,8 +3,10 @@ import TheButton from '../Ui/TheButton';
 import classes from './HeroSection.module.css';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-scroll';
-import FoodImage from '../../assets/image/FoodImage.webp';
+import FoodImage from '../../assets/image/FoodImage.png';
 import FastDelivery from '../../assets/image/fast.png';
+import Circle from '../../assets/image/circle.png';
+import Free from '../../assets/image/free.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HeroSection = () => {
@@ -12,7 +14,7 @@ const HeroSection = () => {
     <section id='hero' className={classes.heroSection}>
       <Container>
         <div
-          style={{ width: '100%', backgroundColor: 'var(--primarybackground)' }}
+          style={{ width: '90%', backgroundColor: 'var(--primarybackground)' }}
         >
           <Row className={`${classes.row} mx-auto`}>
             <Col
@@ -23,7 +25,7 @@ const HeroSection = () => {
               data-aos-duration='1500'
             >
               <div className={classes.text__div}>
-                <h1>Taste Your Favorite Food</h1>
+                <h1>Taste Your Favorite Food at Foodle</h1>
                 <p>
                   We are just a click away from you when you crave for delicious
                   fast food
@@ -70,12 +72,14 @@ const HeroSection = () => {
               </p>
             </div>
             <div className='mx-4'>
+              <img src={Circle} alt='fresh' className={classes.img} />
               <p className={classes.number__properties__digit}>Fresh Food</p>
               <p className={classes.number__properties__text}>
                 Your food will be prepared with fresh ingredients
               </p>
             </div>
             <div>
+              <img src={Free} alt='free' className={classes.img} />
               <p className={classes.number__properties__digit}>Free Delivery</p>
               <p className={classes.number__properties__text}>
                 Food Delivery is absolutely free.

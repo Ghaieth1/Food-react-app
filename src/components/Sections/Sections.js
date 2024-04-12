@@ -6,13 +6,14 @@ import HeroFourSection from './HeroFourSection';
 import HeroFiveSection from './HeroFiveSection';
 import HeroSixSection from './HeroSixSection';
 import HeroSevenSection from './HeroSevenSection';
+import HeroTwoSection from './HeroTwoSection';
 
 const Sections = () => {
   //Rendering every of the section components
   return (
     <main>
       <HeroSection />
-
+      <HeroTwoSection />
       <HeroThreeSection />
       <HeroFourSection />
       <HeroFiveSection />

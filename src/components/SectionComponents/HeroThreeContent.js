@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import classes from "./HeroThreeContent.module.css";
-import HeroThreeForm from "./HeroThreeForm";
-import CartContext from "../store/cartcontext";
+import React, { useContext } from 'react';
+import classes from './HeroThreeContent.module.css';
+import HeroThreeForm from './HeroThreeForm';
+import CartContext from '../store/cartcontext';
 
 const HeroThreeContent = (props) => {
   // Using useContext hooks
@@ -30,13 +30,13 @@ const HeroThreeContent = (props) => {
   return (
     <div className={classes.dish_content}>
       <div className={classes.dish_image_div}>
-        <img src={props.src} alt="Dish" />
+        <img src={props.src} alt='Dish' />
       </div>
       <div className={classes.dish_text_div}>
         <p>{props.name}</p>
       </div>
       <div className={classes.dish_price_div}>
-        <p className="my-auto">{price}</p>
+        <p className='my-auto'>{price}</p>
         <HeroThreeForm onAddToCart={onAddToCartHandler} />
       </div>
     </div>
