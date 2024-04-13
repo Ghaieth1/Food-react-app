@@ -75,6 +75,9 @@ const HeroThreeForm = (props) => {
             max: '5',
             step: '1',
             defaultValue: '1',
+            style: {
+              display: 'none', // Masquer visuellement l'input
+            },
           }}
         />
         <TheButton type='submit' onClick={ontooltipHandler}>

@@ -1,3 +1,5 @@
+/* HeroThreeSection.module.css */
+
 .row {
   padding: 100px 0 50px 0;
   max-width: 1200px;
@@ -20,21 +22,46 @@
 }
 
 .row_dish {
-  border-bottom: 1px solid var(--bordercolor);
+  border: 1px var(--bordercolor);
 }
 
 .dish_content {
   padding: 0 30px;
 }
 
-.dish_col {
-  padding: 30px 0;
-  border: 1px solid var(--bordercolor);
+.dish_card {
+  padding: 20px;
+  border-radius: 80px;
+  background-color: var(--primarybackground);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 370px; /* Hauteur maximale de chaque carte */
+  margin-bottom: 50px;
+  width: 330px;
+}
+
+/* Styles pour le contenu de la carte */
+.dish_content {
+  padding: 0 30px;
+}
+
+/* Fixez la taille des composants à l'intérieur de chaque carte */
+.dish_content h3 {
+  font-size: 20px; /* Taille de police pour le titre */
+}
+
+.dish_content p {
+  font-size: 16px; /* Taille de police pour le contenu */
 }
 
 .dish_col img {
-  width: 300px;
+  width: 220px;
   border-radius: 100px;
+  height: 220px;
+  margin-top: -60px;
+  margin-right: -200px;
+  object-fit: cover;
+  border: 10px solid rgb(248, 63, 63);
+  margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 991px) {
