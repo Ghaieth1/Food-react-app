@@ -1,71 +1,98 @@
-import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import classes from "./HeroThreeSection.module.css";
-import dish1 from "../../assets/image/dish1.webp";
-import dish2 from "../../assets/image/dish2.webp";
-import dish3 from "../../assets/image/dish3.webp";
-import dish4 from "../../assets/image/dish4.webp";
-import dish5 from "../../assets/image/dish5.webp";
-import dish6 from "../../assets/image/dish6.webp";
-import HeroThreeContent from "../SectionComponents/HeroThreeContent";
+import React from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import classes from './HeroThreeSection.module.css';
+import cheeseBurger from '../../assets/image/cheese burger.jpg';
+import chickenBurger from '../../assets/image/chicken burger.jpg';
+import margherita from '../../assets/image/margherita.webp';
+import tonno from '../../assets/image/tonno.jpg';
+import burrata from '../../assets/image/burrata.webp';
+import frenchFries from '../../assets/image/french fries.jpg';
+import redBull from '../../assets/image/redbull.webp';
+import cocaCola from '../../assets/image/coca cola.jpg';
+import fanta from '../../assets/image/fanta.jfif';
+import HeroThreeContent from '../SectionComponents/HeroThreeContent';
 
 //Data objects to be used in the HeroThree section for rendering dishes information
-const dummyListone = [
+const burgers = [
   {
-    id: "d1",
-    src: dish1,
-    name: "Yam and egg sauce",
-    price: 1500,
+    id: 'd1',
+    src: cheeseBurger,
+    name: 'Cheese Burger',
+    price: 15,
   },
 
   {
-    id: "d2",
-    src: dish2,
-    name: "Jollof rice and chicken",
-    price: 3500,
-  },
-
-  {
-    id: "d3",
-    src: dish3,
-    name: "Porridge beans",
-    price: 2000,
+    id: 'd2',
+    src: chickenBurger,
+    name: 'Chicken Burger',
+    price: 15,
   },
 ];
 
-const dummyListtwo = [
+const pizzas = [
   {
-    id: "d4",
-    src: dish4,
-    name: "Semo and egusi soup",
-    price: 5000,
+    id: 'd3',
+    src: margherita,
+    name: 'Margherita',
+    price: 10,
   },
 
   {
-    id: "d5",
-    src: dish5,
-    name: "Amala and ewedu soup",
-    price: 7000.0,
+    id: 'd4',
+    src: tonno,
+    name: 'Tonno',
+    price: 12,
   },
 
   {
-    id: "d6",
-    src: dish6,
-    name: "Eba and okra soup",
-    price: 3000.0,
+    id: 'd5',
+    src: burrata,
+    name: 'Burrata',
+    price: 15,
+  },
+];
+
+const fries = [
+  {
+    id: 'd6',
+    src: frenchFries,
+    name: 'French Fries',
+    price: 5,
+  },
+];
+const drinks = [
+  {
+    id: 'd7',
+    src: redBull,
+    name: 'Red Bull',
+    price: 3,
+  },
+
+  {
+    id: 'd8',
+    src: cocaCola,
+    name: 'Coca Cola',
+    price: 2,
+  },
+
+  {
+    id: 'd9',
+    src: fanta,
+    name: 'Fanta Orange',
+    price: 2,
   },
 ];
 //END
 
 const HeroThreeSection = () => {
   //Mapping the data from the object above and storing them in a variable
-  const dishList1 = dummyListone.map((dish) => (
+  const burgersList = burgers.map((dish) => (
     <Col lg={4} className={classes.dish_col}>
       <div
-        data-aos="fade-up"
-        data-aos-easing="ease-out"
-        data-aos-duration="700"
+        data-aos='fade-up'
+        data-aos-easing='ease-out'
+        data-aos-duration='700'
       >
         <HeroThreeContent
           key={dish.id}
@@ -78,12 +105,46 @@ const HeroThreeSection = () => {
     </Col>
   ));
 
-  const dishList2 = dummyListtwo.map((dish) => (
+  const pizzasList = pizzas.map((dish) => (
     <Col lg={4} className={classes.dish_col}>
       <div
-        data-aos="fade-up"
-        data-aos-easing="ease-out"
-        data-aos-duration="700"
+        data-aos='fade-up'
+        data-aos-easing='ease-out'
+        data-aos-duration='700'
+      >
+        <HeroThreeContent
+          key={dish.id}
+          id={dish.id}
+          name={dish.name}
+          src={dish.src}
+          price={dish.price}
+        />
+      </div>
+    </Col>
+  ));
+  const friesList = fries.map((dish) => (
+    <Col lg={4} className={classes.dish_col}>
+      <div
+        data-aos='fade-up'
+        data-aos-easing='ease-out'
+        data-aos-duration='700'
+      >
+        <HeroThreeContent
+          key={dish.id}
+          id={dish.id}
+          name={dish.name}
+          src={dish.src}
+          price={dish.price}
+        />
+      </div>
+    </Col>
+  ));
+  const drinksList = drinks.map((dish) => (
+    <Col lg={4} className={classes.dish_col}>
+      <div
+        data-aos='fade-up'
+        data-aos-easing='ease-out'
+        data-aos-duration='700'
       >
         <HeroThreeContent
           key={dish.id}
@@ -99,13 +160,13 @@ const HeroThreeSection = () => {
 
   //Rendering the Hero Three section
   return (
-    <section id="dishes">
+    <section id='dishes'>
       <Container>
         <Row
           className={`${classes.row} mx-auto`}
-          data-aos="fade-up"
-          data-aos-easing="ease-out"
-          data-aos-duration="700"
+          data-aos='fade-up'
+          data-aos-easing='ease-out'
+          data-aos-duration='700'
         >
           <Col xs={12}>
             <div className={classes.header_div}>
@@ -115,9 +176,11 @@ const HeroThreeSection = () => {
           </Col>
         </Row>
 
-        <Row className={classes.row_dish}>{dishList1}</Row>
+        <Row className={classes.row_dish}>{burgersList}</Row>
 
-        <Row>{dishList2}</Row>
+        <Row>{pizzasList}</Row>
+        <Row>{friesList}</Row>
+        <Row>{drinksList}</Row>
       </Container>
     </section>
   );

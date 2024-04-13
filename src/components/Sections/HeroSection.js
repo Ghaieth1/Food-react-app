@@ -28,7 +28,7 @@ const HeroSection = () => {
                 <h1>Taste Your Favorite Food at Foodle</h1>
                 <p>
                   We are just a click away from you when you crave for delicious
-                  fast food
+                  food
                 </p>
 
                 <Link

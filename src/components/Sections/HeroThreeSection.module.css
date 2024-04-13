@@ -32,6 +32,11 @@
   border: 1px solid var(--bordercolor);
 }
 
+.dish_col img {
+  width: 300px;
+  border-radius: 100px;
+}
+
 @media only screen and (max-width: 991px) {
   .row_dish {
     border-bottom: none;
