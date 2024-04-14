@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Row, Col, Container, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
+
 import classes from './HeroThreeSection.module.css';
 import HeroThreeContent from '../SectionComponents/HeroThreeContent';
 
@@ -14,6 +14,11 @@ import frenchFries from '../../assets/image/french fries.jpg';
 import redBull from '../../assets/image/redbull.webp';
 import cocaCola from '../../assets/image/coca cola.jpg';
 import fanta from '../../assets/image/fanta orange.png';
+import allIcon from '../../assets/Icon/cutlery.png';
+import burgerIcon from '../../assets/Icon/burger.png';
+import pizzaIcon from '../../assets/Icon/pizza.png';
+import friesIcon from '../../assets/Icon/fries.png';
+import drinkIcon from '../../assets/Icon/drink.png';
 
 const HeroThreeSection = () => {
   const [filter, setFilter] = useState('all');
@@ -121,6 +126,11 @@ const HeroThreeSection = () => {
     ));
   };
 
+  // Effet secondaire pour sélectionner automatiquement "All" au chargement de la page
+  useEffect(() => {
+    setFilter('all');
+  }, []);
+
   // Rendu de la section Hero Three
   return (
     <section id='dishes'>
@@ -138,36 +148,65 @@ const HeroThreeSection = () => {
             </div>
             {/* Ajoutez les boutons de filtre */}
             <div className={classes.filter_section}>
-              <Button
-                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+              <button
+                className={`${classes.filter_button} ${
+                  classes.filter_button_motion
+                } ${filter === 'all' ? classes.default_focus_style : ''}`}
                 onClick={() => handleFilterChange('all')}
               >
+                <img
+                  src={allIcon}
+                  alt='all icon '
+                  className={`${classes.filter_icon} ${
+                    filter === 'all' ? classes.default_icon_style : ''
+                  }`}
+                />
                 All
-              </Button>
-              <Button
+              </button>
+              <button
                 className={`${classes.filter_button} ${classes.filter_button_motion}`}
                 onClick={() => handleFilterChange('burgers')}
               >
+                <img
+                  src={burgerIcon}
+                  alt='burger icon'
+                  className={classes.filter_icon}
+                />
                 Burgers
-              </Button>
-              <Button
+              </button>
+              <button
                 className={`${classes.filter_button} ${classes.filter_button_motion}`}
                 onClick={() => handleFilterChange('pizzas')}
               >
+                <img
+                  src={pizzaIcon}
+                  alt='pizza icon'
+                  className={classes.filter_icon}
+                />
                 Pizzas
-              </Button>
-              <Button
+              </button>
+              <button
                 className={`${classes.filter_button} ${classes.filter_button_motion}`}
                 onClick={() => handleFilterChange('fries')}
               >
+                <img
+                  src={friesIcon}
+                  alt='fries icon'
+                  className={classes.filter_icon}
+                />
                 Fries
-              </Button>
-              <Button
+              </button>
+              <button
                 className={`${classes.filter_button} ${classes.filter_button_motion}`}
                 onClick={() => handleFilterChange('drinks')}
               >
+                <img
+                  src={drinkIcon}
+                  alt='drink icon'
+                  className={classes.filter_icon}
+                />
                 Drinks
-              </Button>
+              </button>
             </div>
           </Col>
         </Row>

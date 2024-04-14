@@ -32,7 +32,7 @@
 
 .dish_card {
   padding: 20px;
-  border-radius: 80px;
+  border-radius: 60px;
   background-color: var(--primarybackground);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 370px; /* Hauteur maximale de chaque carte */
@@ -56,7 +56,7 @@
 
 .dish_col img {
   width: 220px;
-  border-radius: 100px;
+  border-radius: 120px;
   height: 220px;
   margin-top: -60px;
   margin-right: -200px;
@@ -77,23 +77,30 @@
 
 .filter_button {
   color: black;
+
   background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 30px;
   padding: 10px 10px;
-  margin-right: 50px;
+  margin-right: 70px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  outline: none; /* Nouvelle propriété pour enlever la bordure */
+  /* Nouvelle propriété pour enlever la bordure */
 }
 
 .filter_button:hover,
 .filter_button:focus {
-  /* Ajout de :focus pour gérer le clic */
   background-color: rgb(248, 63, 63);
-  border-color: black;
+  color: white;
+}
+
+/* Ajoutez un style pour le bouton actif */
+.active_button {
+  background-color: rgb(248, 63, 63);
+
+  /* Ajout de la couleur du texte */
 }
 
 /* Style spécifique pour les boutons de filtre animés */
@@ -103,7 +110,7 @@
   background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -112,6 +119,31 @@
 .filter_button_motion:hover {
   transform: scale(1.1);
   background-color: rgb(248, 63, 63);
+  color: white;
+}
+
+.filter_icon {
+  width: 40px; /* Ajuster la largeur de l'icône */
+  height: 40px; /* Ajuster la hauteur de l'icône */
+  background-color: rgb(248, 63, 63);
+  border-radius: 50px; /* Ajuster le rayon de la bordure pour créer un cercle */
+  margin: 20px;
+  padding: 10px;
+}
+.default_focus_style {
+  background-color: rgb(248, 63, 63);
+  color: white;
+}
+
+.default_icon_style {
+  background-color: white;
+}
+.filter_button:hover .filter_icon {
+  background-color: white;
+}
+
+.filter_button:focus .filter_icon {
+  background-color: white;
 }
 
 @media only screen and (max-width: 991px) {
