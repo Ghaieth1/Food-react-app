@@ -7,7 +7,8 @@
 
 .header_div {
   text-align: center;
-  margin-top: 500px;
+  margin-top: 300px;
+  margin-bottom: 120px;
 }
 
 .header_div h2 {
@@ -21,9 +22,9 @@
   font-size: 20px;
 }
 
-.row_dish {
+/* .row_dish {
   border: 1px var(--bordercolor);
-}
+} */
 
 .dish_content {
   padding: 0 30px;
@@ -62,6 +63,55 @@
   object-fit: cover;
   border: 10px solid rgb(248, 63, 63);
   margin-bottom: 20px;
+}
+
+/* Nouveau style pour le filtre */
+/* HeroThreeSection.module.css */
+
+/* Nouveau style pour les boutons de filtre */
+.filter_section {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.filter_button {
+  color: black;
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 10px;
+  margin-right: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none; /* Nouvelle propriété pour enlever la bordure */
+}
+
+.filter_button:hover,
+.filter_button:focus {
+  /* Ajout de :focus pour gérer le clic */
+  background-color: rgb(248, 63, 63);
+  border-color: black;
+}
+
+/* Style spécifique pour les boutons de filtre animés */
+.filter_button_motion {
+  width: 100px; /* Largeur réduite */
+  height: 120px; /* Hauteur plus grande que la largeur */
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.filter_button_motion:hover {
+  transform: scale(1.1);
+  background-color: rgb(248, 63, 63);
 }
 
 @media only screen and (max-width: 991px) {

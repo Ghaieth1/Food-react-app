@@ -1,7 +1,5 @@
-// HeroThreeSection.js
-
-import React from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from './HeroThreeSection.module.css';
 import HeroThreeContent from '../SectionComponents/HeroThreeContent';
@@ -17,75 +15,91 @@ import redBull from '../../assets/image/redbull.webp';
 import cocaCola from '../../assets/image/coca cola.jpg';
 import fanta from '../../assets/image/fanta orange.png';
 
-//Data objects to be used in the HeroThree section for rendering dishes information
-const burgers = [
-  {
-    id: 'd1',
-    src: cheeseBurger,
-    name: 'Cheese Burger',
-    price: 15,
-  },
-  {
-    id: 'd2',
-    src: chickenBurger,
-    name: 'Chicken Burger',
-    price: 15,
-  },
-];
-
-const pizzas = [
-  {
-    id: 'd3',
-    src: margherita,
-    name: 'Margherita',
-    price: 10,
-  },
-  {
-    id: 'd4',
-    src: tonno,
-    name: 'Tonno',
-    price: 12,
-  },
-  {
-    id: 'd5',
-    src: burrata,
-    name: 'Burrata',
-    price: 15,
-  },
-];
-
-const fries = [
-  {
-    id: 'd6',
-    src: frenchFries,
-    name: 'French Fries',
-    price: 5,
-  },
-];
-
-const drinks = [
-  {
-    id: 'd7',
-    src: redBull,
-    name: 'Red Bull',
-    price: 3,
-  },
-  {
-    id: 'd8',
-    src: cocaCola,
-    name: 'Coca Cola',
-    price: 2,
-  },
-  {
-    id: 'd9',
-    src: fanta,
-    name: 'Fanta Orange',
-    price: 2,
-  },
-];
-//END
-
 const HeroThreeSection = () => {
+  const [filter, setFilter] = useState('all');
+
+  // Fonction pour changer le filtre
+  const handleFilterChange = (category) => {
+    setFilter(category);
+  };
+
+  //Data objects to be used in the HeroThree section for rendering dishes information
+  const burgers = [
+    {
+      id: 'd1',
+      src: cheeseBurger,
+      name: 'Cheese Burger',
+      price: 15,
+      category: 'burgers',
+    },
+    {
+      id: 'd2',
+      src: chickenBurger,
+      name: 'Chicken Burger',
+      price: 15,
+      category: 'burgers',
+    },
+  ];
+
+  const pizzas = [
+    {
+      id: 'd3',
+      src: margherita,
+      name: 'Margherita',
+      price: 10,
+      category: 'pizzas',
+    },
+    {
+      id: 'd4',
+      src: tonno,
+      name: 'Tonno',
+      price: 12,
+      category: 'pizzas',
+    },
+    {
+      id: 'd5',
+      src: burrata,
+      name: 'Burrata',
+      price: 15,
+      category: 'pizzas',
+    },
+  ];
+
+  const fries = [
+    {
+      id: 'd6',
+      src: frenchFries,
+      name: 'French Fries',
+      price: 5,
+      category: 'fries',
+    },
+  ];
+
+  const drinks = [
+    {
+      id: 'd7',
+      src: redBull,
+      name: 'Red Bull',
+      price: 3,
+      category: 'drinks',
+    },
+    {
+      id: 'd8',
+      src: cocaCola,
+      name: 'Coca Cola',
+      price: 2,
+      category: 'drinks',
+    },
+    {
+      id: 'd9',
+      src: fanta,
+      name: 'Fanta Orange',
+      price: 2,
+      category: 'drinks',
+    },
+  ];
+  //END
+
   // Fonction pour générer les plats à partir des données
   const renderDishes = (dishes) => {
     return dishes.map((dish) => (
@@ -94,7 +108,7 @@ const HeroThreeSection = () => {
           data-aos='fade-up'
           data-aos-easing='ease-out'
           data-aos-duration='700'
-          className={classes.dish_card} // Ajoutez la classe dish_card ici
+          className={classes.dish_card}
         >
           <HeroThreeContent
             key={dish.id}
@@ -122,14 +136,56 @@ const HeroThreeSection = () => {
               <h2>Our daily dishes</h2>
               <p>Check out recommended dishes of your choice</p>
             </div>
+            {/* Ajoutez les boutons de filtre */}
+            <div className={classes.filter_section}>
+              <Button
+                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+                onClick={() => handleFilterChange('all')}
+              >
+                All
+              </Button>
+              <Button
+                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+                onClick={() => handleFilterChange('burgers')}
+              >
+                Burgers
+              </Button>
+              <Button
+                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+                onClick={() => handleFilterChange('pizzas')}
+              >
+                Pizzas
+              </Button>
+              <Button
+                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+                onClick={() => handleFilterChange('fries')}
+              >
+                Fries
+              </Button>
+              <Button
+                className={`${classes.filter_button} ${classes.filter_button_motion}`}
+                onClick={() => handleFilterChange('drinks')}
+              >
+                Drinks
+              </Button>
+            </div>
           </Col>
         </Row>
 
         <Row className={classes.row_dish}>
-          {renderDishes(burgers)}
-          {renderDishes(pizzas)}
-          {renderDishes(fries)}
-          {renderDishes(drinks)}
+          {/* Filtrer les plats en fonction de la catégorie sélectionnée */}
+          {filter === 'all' && (
+            <>
+              {renderDishes(burgers)}
+              {renderDishes(pizzas)}
+              {renderDishes(fries)}
+              {renderDishes(drinks)}
+            </>
+          )}
+          {filter === 'burgers' && renderDishes(burgers)}
+          {filter === 'pizzas' && renderDishes(pizzas)}
+          {filter === 'fries' && renderDishes(fries)}
+          {filter === 'drinks' && renderDishes(drinks)}
         </Row>
       </Container>
     </section>
