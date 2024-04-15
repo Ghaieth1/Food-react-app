@@ -12,7 +12,7 @@ const Cart = (props) => {
 
   //Converting Total amount to two decimal places
 
-  const totalAmount = `₦${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `${cartCtx.totalAmount.toFixed(2)}€`;
 
   //ENDS
 
@@ -43,7 +43,7 @@ const Cart = (props) => {
       price={item.price}
       key={item.id}
       src={item.src}
-      onAdd={onAddHandler.bind(null, item)}
+      onAdd={onAddHandler.bind(null, item.id)}
       onRemove={onRemoveHandler.bind(null, item.id)}
     />
   ));

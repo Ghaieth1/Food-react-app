@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-scroll';
 import classes from './TheNavbar.module.css';
-import Logo from '../../assets/Logo/Logo.svg';
+import Logo from '../../assets/Logo/Logo.png';
 
 const TheNavbar = (props) => {
   //Layout and structure of the navbar to be passed to THENAV component

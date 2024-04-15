@@ -1,5 +1,5 @@
 .footer_bg {
-  background-color: var(--bordercolor);
+  background-color: var(--primarybackground);
 }
 
 .row {
@@ -7,10 +7,14 @@
   margin: auto;
   color: var(--light);
 }
+.image_div img {
+  width: 120px;
+}
 
 .content_div {
   margin-top: 20px;
   padding-right: 20%;
+  color: rgb(160, 159, 159);
 }
 
 .mobile_copy {
@@ -18,21 +22,29 @@
   text-align: center;
   display: none;
 }
+.about h3 {
+  color: rgb(248, 63, 63);
+}
 
 .about p {
   cursor: pointer;
   transition: 0.3s;
   margin-top: 20px;
+  color: rgb(160, 159, 159);
 }
 
 .about p:hover {
-  color: var(--primaryitemcolor);
+  color: black;
 }
 
 .social {
   text-align: center;
+  color: rgb(248, 63, 63);
 }
 
+.social a {
+  color: rgb(160, 159, 159);
+}
 .social p {
   cursor: pointer;
   width: 50px;
@@ -44,7 +56,7 @@
 }
 
 .social p:hover {
-  background-color: var(--primaryitemcolor);
+  background-color: white;
 }
 
 .social_icon {
@@ -55,8 +67,8 @@
   cursor: pointer;
 }
 
-.eniola_codes {
-  color: var(--light);
+.ghaieth_grami {
+  color: rgb(160, 159, 159);
   text-decoration: none;
   transition: 0.3s;
   cursor: pointer;
@@ -64,8 +76,8 @@
   font-weight: 18px;
 }
 
-.eniola_codes:hover {
-  color: var(--primaryitemcolor);
+.ghaieth_grami:hover {
+  color: black;
 }
 .content_div i,
 .mobile_copy i {

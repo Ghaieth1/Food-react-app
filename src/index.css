@@ -35,8 +35,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
-
-::selection {
-  background-color: var(--primaryitemcolor);
-  color: var(--light);
-}
