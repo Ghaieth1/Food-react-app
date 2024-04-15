@@ -1,6 +1,8 @@
 .row {
   width: 1200px; /* ou toute autre largeur désirée */
   margin: auto;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 .text_div {

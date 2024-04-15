@@ -25,17 +25,11 @@ const HeroFourSection = () => {
         <Modal>
           <div className={classes.about_modal}>
             <div className={classes.about_header}>
-              <h2 className={classes.text_modal_header}>About us</h2>
+              <h2 className={classes.text_modal_header}>Discount</h2>
             </div>
             <div className={classes.about_body}>
               <p className={classes.text_content}>
-                I make delicious healthy meals for busy people who want to enjoy
-                home made food without the hassle of cooking. Why would you cook
-                when you don't have to? The Hot Plate makes it easy to eat your
-                favorite home cooked food anywhere you want. You deserve to eat
-                great food, whether you're at home or on the go. We'll help you
-                find unique meals wherever you are. With our app, you never have
-                to settle for unhealthy, expensive takeaway food again.
+                You redeemed a discount promo code. Use it on your next order !.
               </p>
             </div>
             <div className={classes.about_footer}>
@@ -59,7 +53,7 @@ const HeroFourSection = () => {
                 src={discount}
                 alt='discount card'
                 onClick={aboutModal}
-                width='100%'
+                width='1100px'
                 height='auto'
               ></img>
             </Col>

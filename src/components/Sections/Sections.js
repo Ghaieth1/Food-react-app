@@ -3,9 +3,6 @@ import HeroSection from './HeroSection';
 
 import HeroThreeSection from './HeroThreeSection';
 import HeroFourSection from './HeroFourSection';
-import HeroFiveSection from './HeroFiveSection';
-import HeroSixSection from './HeroSixSection';
-import HeroSevenSection from './HeroSevenSection';
 
 const Sections = () => {
   //Rendering every of the section components
@@ -15,9 +12,6 @@ const Sections = () => {
 
       <HeroThreeSection />
       <HeroFourSection />
-      <HeroFiveSection />
-      <HeroSixSection />
-      <HeroSevenSection />
     </main>
   );
   //END
