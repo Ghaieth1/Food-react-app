@@ -83,11 +83,6 @@ const HeroThreeForm = (props) => {
         <TheButton type='submit' onClick={ontooltipHandler}>
           <i className='bi bi-plus'></i> Add
         </TheButton>
-        {/*Error message to be displayed on incorrect user input */}
-        {!amountIsValid && (
-          <p>Input is invalid, Pleae Input a amount between 1 and 5</p>
-        )}
-        {/*END */}
       </form>
     </>
   );

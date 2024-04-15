@@ -3,8 +3,9 @@ import { Row, Container, Col } from 'react-bootstrap';
 import TheButton from '../Ui/TheButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from './HeroFourSection.module.css';
-import aboutImage from '../../assets/image/about-image.webp';
+
 import Modal from '../Ui/Modal';
+import discount from '../../assets/image/discount card.jpg';
 
 const HeroFourSection = () => {
   const [showModal, setShowModal] = useState(false);
@@ -54,34 +55,13 @@ const HeroFourSection = () => {
               data-aos-easing='ease-out'
               data-aos-duration='700'
             >
-              <div className={classes.text_div}>
-                <h2 className={classes.text_header}>About us</h2>
-                <p className={classes.text_content}>
-                  I make delicious healthy meals for busy people who want to
-                  enjoy home made food without the hassle of cooking. Why would
-                  you cook when you don't have to? The Hot Plate makes it easy
-                  to eat your favorite home cooked food anywhere you want. You
-                  deserve to eat great food, whether you're at home or on the
-                  go.
-                </p>
-                <div className={classes.button_div}>
-                  <TheButton onClick={aboutModal}>See more</TheButton>
-                </div>
-              </div>
-            </Col>
-            <Col lg={6}>
-              <div
-                className={classes.image_div}
-                data-aos='fade-left'
-                data-aos-easing='ease-out'
-                data-aos-duration='700'
-              >
-                <img
-                  className={classes.image}
-                  src={aboutImage}
-                  alt='about'
-                ></img>
-              </div>
+              <img
+                src={discount}
+                alt='discount card'
+                onClick={aboutModal}
+                width='100%'
+                height='auto'
+              ></img>
             </Col>
           </Row>
         </Container>

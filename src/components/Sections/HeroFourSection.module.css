@@ -1,6 +1,6 @@
 .row {
-  padding: 100px 0 50px 0;
-  max-width: 1200px;
+  width: 1200px; /* ou toute autre largeur désirée */
+  margin: auto;
 }
 
 .text_div {
@@ -39,12 +39,20 @@
 
 .image {
   width: 100%;
+  max-width: 100%; /* Assurez-vous que la largeur maximale est définie à 100% */
 }
 
+.HeroFourSection_row__2XpeA {
+  width: 1200px; /* ou toute autre largeur désirée */
+  margin: auto;
+}
 .about_modal {
   padding: 30px;
 }
 
+.button_div {
+  width: 200px;
+}
 .about_body {
   overflow-y: auto;
   max-height: 300px;

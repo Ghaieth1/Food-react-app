@@ -10,7 +10,7 @@ const HeroThreeContent = (props) => {
 
   //Converting prices to two decimal places
 
-  const price = `₦${props.price.toFixed(2)}`;
+  const price = `${props.price.toFixed(2)}€`;
 
   //END
 
