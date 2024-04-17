@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Input from '../Ui/Input';
-import TheButton from '../Ui/TheButton';
+import TheButton2 from '../Ui/TheButton2';
 import Tooltip from '../Ui/Tooltip';
 import classes from '../Ui/Tooltip.module.css';
 
@@ -80,9 +80,9 @@ const HeroThreeForm = (props) => {
             },
           }}
         />
-        <TheButton type='submit' onClick={ontooltipHandler}>
+        <TheButton2 type='submit' onClick={ontooltipHandler} className='width'>
           <i className='bi bi-plus'></i> Add
-        </TheButton>
+        </TheButton2>
       </form>
     </>
   );

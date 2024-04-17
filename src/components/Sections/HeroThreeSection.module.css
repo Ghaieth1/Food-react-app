@@ -14,11 +14,15 @@
 .header_div h2 {
   font-size: 40px;
   font-weight: 700;
-  color: var(--primaryitemcolor);
+  color: black;
+}
+.header_div span {
+  color: rgb(248, 63, 63); /* Couleur spécifiée */
 }
 
 .header_div p {
-  color: var(--textcolor);
+  color: rgb(160, 159, 159);
+  margin-top: 20px;
   font-size: 20px;
 }
 
