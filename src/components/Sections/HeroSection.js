@@ -7,6 +7,7 @@ import FoodImage from '../../assets/image/FoodImage.png';
 import FastDelivery from '../../assets/image/fast.png';
 import Circle from '../../assets/image/circle.png';
 import Free from '../../assets/image/free.png';
+import order from '../../assets/Icon/order.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const HeroSection = () => {
@@ -39,7 +40,15 @@ const HeroSection = () => {
                   offset={-50}
                   duration={500}
                 >
-                  <TheButton>Order Now</TheButton>
+                  {/* Image avant le texte */}
+                  <TheButton>
+                    <img
+                      src={order}
+                      alt='order'
+                      className={classes.order_icon}
+                    />
+                    Order Now
+                  </TheButton>
                 </Link>
               </div>
             </Col>

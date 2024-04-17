@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import classes from './NavCartButton.module.css';
 import CartContext from '../store/cartcontext';
+import cartIcon from '../../assets/Icon/cart.png';
 
 const NavCartButton = (props) => {
   //Using useContext & useState hooks

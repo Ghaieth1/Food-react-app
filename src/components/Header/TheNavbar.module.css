@@ -23,13 +23,16 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-right: auto;
 }
 
 .navbar .nav__link {
   font-size: 18px;
   font-weight: 500;
-  color: var(--dark);
+  color: rgb(160, 159, 159);
   transition: 0.3s;
+  margin-left: auto;
 }
 
 .navbar .nav__link:focus {
@@ -39,7 +42,7 @@
 }
 
 .navbar .nav__link .active {
-  color: var(--primaryitemcolor) !important;
+  color: black !important;
   text-decoration: none;
 }
 
@@ -48,7 +51,7 @@
 }
 
 .navbar .nav__link:hover {
-  color: var(--primaryitemcolor);
+  color: black;
 }
 
 @media only screen and (max-width: 1200px) {

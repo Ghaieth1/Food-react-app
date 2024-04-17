@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from './Footer.module.css';
 import Logo from '../../assets/Logo/Logo.png';
 import { Link } from 'react-scroll';
-import insta from '../../assets/Icon/instagram.ico';
+
 import twitter from '../../assets/Icon/twitter.ico';
 import linkedin from '../../assets/Icon/linkedin.ico';
 import github from '../../assets/Icon/github.ico';
@@ -70,16 +70,7 @@ const Footer = () => {
           <Col lg={3}>
             <div className={classes.social}>
               <h3>Social</h3>
-              <a href target='_blank' rel='noreferrer'>
-                <p>
-                  <img
-                    src={insta}
-                    alt='instagram'
-                    className={classes.social_icon}
-                    color='grey'
-                  ></img>
-                </p>
-              </a>
+
               <a href target='_blank' rel='noreferrer'>
                 <p>
                   <img

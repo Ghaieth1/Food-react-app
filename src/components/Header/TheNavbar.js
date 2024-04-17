@@ -58,7 +58,6 @@ const TheNavbar = (props) => {
             <Nav.Link className={`${classes.nav__link} me-4`}>
               <Link
                 activeClass={classes.active}
-                to='about'
                 spy={true}
                 smooth={true}
                 offset={-50}

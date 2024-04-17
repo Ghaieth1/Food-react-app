@@ -1,31 +1,37 @@
 .cart__button {
-  background-color: var(--primaryitemcolor);
   color: var(--light);
   padding: 10px 0;
-  width: 100px;
+  width: 90px;
   text-align: center;
   border-radius: 8px;
   transition: 0.3s;
+  position: relative; /* Permet de positionner le badge */
 }
 
 .cart__button i {
-  display: inline-block;
-  margin-right: 5px;
+  margin-right: 100px;
   font-size: 18px;
-  color: var(--light);
+  color: black;
 }
 
 .cart__button .badge {
-  display: inline;
-  margin-left: 10px;
-  background-color: var(--primarybackground);
-  color: var(--dark);
-  padding: 2px 13px 2px 13px;
-  border-radius: 11px;
+  position: absolute;
+  top: 3px;
+  right: 60px;
+  background: #df2020;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart__button:hover {
-  background-color: #ef4c06;
+  transform: scale(1.1);
 }
 
 .bump.cart__button {

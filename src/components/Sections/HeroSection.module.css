@@ -23,6 +23,18 @@
   font-size: 48px;
   margin-bottom: 20px;
 }
+.order_button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--light);
+}
+
+.order_icon {
+  width: 35px; /* Taille de l'image */
+  background-color: var(--primaryitemcolor);
+  margin-right: 10px;
+}
 
 .text__div h1 span {
   color: var(--primaryitemcolor);
