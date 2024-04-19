@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import classes from './form.module.css'; // Importez les classes du fichier form.module.css
-
+import classes from './form.module.css';
+import TheButton from '../Ui/TheButton';
+import Modal from '../Ui/Modal';
 const Form = ({ onCloseContact }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,60 +14,75 @@ const Form = ({ onCloseContact }) => {
   };
 
   return (
-    <div className={classes['form-container']}>
-      {' '}
-      {/* Utilisez les classes importées */}
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className={classes['form-group']}>
+    <Modal>
+      <div className={classes.about_modal}>
+        <div className={classes.about_header}>
+          <h2 className={classes.text_modal_header}>Contact</h2>
+        </div>
+
+        <div className={classes['form-container']}>
           {' '}
           {/* Utilisez les classes importées */}
-          <input
-            type='text'
-            placeholder='Your Name'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <form onSubmit={handleSubmit}>
+            <div className={classes['form-group']}>
+              {' '}
+              {/* Utilisez les classes importées */}
+              <input
+                type='text'
+                placeholder='Your Name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className={classes['form-group']}>
+              {' '}
+              {/* Utilisez les classes importées */}
+              <input
+                type='email'
+                placeholder='Your Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className={classes['form-group']}>
+              {' '}
+              {/* Utilisez les classes importées */}
+              <input
+                type='text'
+                placeholder='Subject'
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                required
+              />
+            </div>
+            <div className={classes['form-group']}>
+              {' '}
+              {/* Utilisez les classes importées */}
+              <textarea
+                placeholder='Your Message'
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              ></textarea>
+            </div>
+            <div className={classes.buttons}>
+              <TheButton type='submit' className={` ${classes.btn_style} me-2`}>
+                Send
+              </TheButton>
+              <TheButton
+                type='button'
+                onClick={onCloseContact}
+                className={` ${classes.btn_style} me-2`}
+              >
+                Close
+              </TheButton>
+            </div>
+          </form>
         </div>
-        <div className={classes['form-group']}>
-          {' '}
-          {/* Utilisez les classes importées */}
-          <input
-            type='email'
-            placeholder='Your Email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className={classes['form-group']}>
-          {' '}
-          {/* Utilisez les classes importées */}
-          <input
-            type='text'
-            placeholder='Subject'
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            required
-          />
-        </div>
-        <div className={classes['form-group']}>
-          {' '}
-          {/* Utilisez les classes importées */}
-          <textarea
-            placeholder='Your Message'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <button type='submit'>Send</button>
-        <button type='button' onClick={onCloseContact}>
-          Close
-        </button>
-      </form>
-    </div>
+      </div>
+    </Modal>
   );
 };
 
