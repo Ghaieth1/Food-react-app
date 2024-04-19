@@ -44,7 +44,7 @@ const App = () => {
       />
       <Sections />
       <TheFooter />
-      {showContactForm && <Form />}{' '}
+      {showContactForm && <Form onOrder={onOrderHandler} />}{' '}
       {/* Affichez le formulaire lorsque showContactForm est vrai */}
     </CartProvider>
   );

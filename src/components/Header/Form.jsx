@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import classes from './form.module.css';
 import TheButton from '../Ui/TheButton';
 import Modal from '../Ui/Modal';
+import Swal from 'sweetalert2';
+
 const Form = ({ onCloseContact }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,7 +12,27 @@ const Form = ({ onCloseContact }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implémentez ici la logique pour soumettre le formulaire
+    // Vérifiez si le formulaire est valide avant de soumettre
+    if (name && email && subject && message) {
+      // Réinitialisation des champs du formulaire après soumission
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+      // Fermez la modal après l'envoi du formulaire
+      onCloseContact();
+      // Affichez un message de succès après 1 seconde
+      setTimeout(() => {
+        Swal.fire({
+          title: 'Successful!',
+          text: 'Your message has been sent',
+          icon: 'success',
+        });
+      }, 300);
+    } else {
+      // Affichez un message d'erreur si le formulaire n'est pas valide
+      alert('Please fill in all fields');
+    }
   };
 
   return (
@@ -21,12 +43,8 @@ const Form = ({ onCloseContact }) => {
         </div>
 
         <div className={classes['form-container']}>
-          {' '}
-          {/* Utilisez les classes importées */}
           <form onSubmit={handleSubmit}>
             <div className={classes['form-group']}>
-              {' '}
-              {/* Utilisez les classes importées */}
               <input
                 type='text'
                 placeholder='Your Name'
@@ -36,8 +54,6 @@ const Form = ({ onCloseContact }) => {
               />
             </div>
             <div className={classes['form-group']}>
-              {' '}
-              {/* Utilisez les classes importées */}
               <input
                 type='email'
                 placeholder='Your Email'
@@ -47,8 +63,6 @@ const Form = ({ onCloseContact }) => {
               />
             </div>
             <div className={classes['form-group']}>
-              {' '}
-              {/* Utilisez les classes importées */}
               <input
                 type='text'
                 placeholder='Subject'
@@ -58,8 +72,6 @@ const Form = ({ onCloseContact }) => {
               />
             </div>
             <div className={classes['form-group']}>
-              {' '}
-              {/* Utilisez les classes importées */}
               <textarea
                 placeholder='Your Message'
                 value={message}
