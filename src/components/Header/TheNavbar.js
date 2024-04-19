@@ -1,13 +1,26 @@
-import React from 'react';
+// TheNavbar.js
+import React, { useState } from 'react';
 import NavCartButton from './NavCartButton';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-scroll';
-import classes from './TheNavbar.module.css';
 import Logo from '../../assets/Logo/Logo.png';
+import classes from './TheNavbar.module.css';
+import Modal from '../Ui/Modal.js'; // Importez votre composant de modal
+import Form from './Form.jsx'; // Notez le "F" majuscule dans "Form.jsx"
+// Importez votre composant de formulaire
 
 const TheNavbar = (props) => {
-  //Layout and structure of the navbar to be passed to THENAV component
+  const [showModal, setShowModal] = useState(false);
+
+  const contactModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <Navbar
@@ -19,7 +32,7 @@ const TheNavbar = (props) => {
       >
         <Navbar.Brand className={classes.navbar_brand}>
           <Link to='hero' spy={true} smooth={true} offset={-50} duration={500}>
-            <img src={Logo} alt='My logo'></img>
+            <img src={Logo} alt='My logo' />
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle
@@ -56,16 +69,8 @@ const TheNavbar = (props) => {
               </Link>
             </Nav.Link>
             <Nav.Link className={`${classes.nav__link} me-4`}>
-              <Link
-                activeClass={classes.active}
-                to='about'
-                spy={true}
-                smooth={true}
-                offset={-50}
-                duration={500}
-              >
-                Contact
-              </Link>
+              {/* Utilisez toggleContactModal pour afficher ou masquer le formulaire */}
+              <Link onClick={contactModal}>Contact</Link>
             </Nav.Link>
 
             <Nav.Link href='#buttons' className={`${classes.nav__link}`}>
@@ -74,9 +79,13 @@ const TheNavbar = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      {showModal && (
+        <Modal>
+          <Form onCloseContact={closeModal} />
+        </Modal>
+      )}
     </>
   );
-  //ENDS
 };
 
 export default TheNavbar;

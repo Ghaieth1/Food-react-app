@@ -5,13 +5,12 @@ import Cart from './components/Cart/Cart';
 import CartProvider from './components/store/CartProvider';
 import TheFooter from './components/Footer/TheFooter';
 import Swal from 'sweetalert2';
+import Form from '../src/components/Header/Form';
 
 const App = () => {
-  //Using useState hook
   const [cartIsShown, setCartIsShown] = useState(false);
-  //END
+  const [showContactForm, setShowContactForm] = useState(false);
 
-  //Managing the state of the cart component using useState
   const onShowCartHandler = () => {
     setCartIsShown(true);
   };
@@ -19,9 +18,7 @@ const App = () => {
   const onCloseCartHandler = () => {
     setCartIsShown(false);
   };
-  //END
 
-  //EVent to occur on Order
   const onOrderHandler = () => {
     setCartIsShown(false);
 
@@ -32,20 +29,25 @@ const App = () => {
     });
   };
 
-  //END
+  const toggleContactForm = () => {
+    setShowContactForm(!showContactForm);
+  };
 
-  //Rendering the cart and all the sections
   return (
     <CartProvider>
       {cartIsShown && (
         <Cart onCloseCart={onCloseCartHandler} onOrder={onOrderHandler} />
       )}
-      <TheNav onShowCart={onShowCartHandler} />
+      <TheNav
+        onShowCart={onShowCartHandler}
+        toggleContactForm={toggleContactForm}
+      />
       <Sections />
       <TheFooter />
+      {showContactForm && <Form />}{' '}
+      {/* Affichez le formulaire lorsque showContactForm est vrai */}
     </CartProvider>
   );
-  //END
 };
 
 export default App;

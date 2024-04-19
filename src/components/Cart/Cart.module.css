@@ -1,5 +1,7 @@
+/* form.module.css */
+
 .items {
-  padding: 0px 20px 20px 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .items .item_group {
@@ -15,7 +17,7 @@
   background-color: var(--light);
   border: 1px solid var(--primaryitemcolor);
   color: var(--primaryitemcolor);
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .buttons .btn_style2 {
