@@ -11,31 +11,24 @@ const Cart = (props) => {
   // ENDS
 
   //Converting Total amount to two decimal places
-
   const totalAmount = `${cartCtx.totalAmount.toFixed(2)}€`;
-
   //ENDS
 
   //Checking if there is any cart item in the cart
-
   const hasItems = cartCtx.items.length > 0;
-
   //ENDS
 
   //Function is called when items are being added or removed from the cart
-
   const onAddHandler = (item) => {
-    cartCtx.addItem({ ...item, amount: 1 });
+    cartCtx.addItem(item);
   };
 
   const onRemoveHandler = (id) => {
     cartCtx.removeItem(id);
   };
-
   //ENDS
 
   //Revceiving values via props and mapping it using useContext
-
   var cartItems = cartCtx.items.map((item) => (
     <CartItem
       name={item.name}
@@ -43,20 +36,17 @@ const Cart = (props) => {
       price={item.price}
       key={item.id}
       src={item.src}
-      onAdd={onAddHandler.bind(null, item.id)}
+      onAdd={onAddHandler.bind(null, item)}
       onRemove={onRemoveHandler.bind(null, item.id)}
     />
   ));
-
   //ENDS
 
   // Rendering the Cart using the modal component
-
   return (
     <Modal onCloseCart={props.onCloseCart}>
       <div className={classes.items}>
         <div className={classes.item_group}>{cartItems}</div>
-
         <div className={`${classes.amount} `}>
           <p>Total Amount</p>
           <p>{totalAmount}</p>
