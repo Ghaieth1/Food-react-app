@@ -1,4 +1,3 @@
-// TheNavbar.js
 import React, { useState } from 'react';
 import NavCartButton from './NavCartButton';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -7,18 +6,37 @@ import { Link } from 'react-scroll';
 import Logo from '../../assets/Logo/Logo.png';
 import classes from './TheNavbar.module.css';
 import Modal from '../Ui/Modal.js'; // Importez votre composant de modal
-import Form from './Form.jsx'; // Notez le "F" majuscule dans "Form.jsx"
-// Importez votre composant de formulaire
+import Form from './Form.jsx';
+import SignUp from '../Auth/SignUp.js';
+import Login from '../Auth/Login.js'; // Importez le composant de connexion
 
 const TheNavbar = (props) => {
   const [showModal, setShowModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const contactModal = () => {
     setShowModal(true);
   };
 
+  const signUpModal = () => {
+    setShowSignUpModal(true);
+  };
+
+  const loginModal = () => {
+    setShowLoginModal(true);
+  };
+
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const closeSignUpModal = () => {
+    setShowSignUpModal(false);
+  };
+
+  const closeLoginModal = () => {
+    setShowLoginModal(false);
   };
 
   return (
@@ -69,8 +87,15 @@ const TheNavbar = (props) => {
               </Link>
             </Nav.Link>
             <Nav.Link className={`${classes.nav__link} me-4`}>
-              {/* Utilisez toggleContactModal pour afficher ou masquer le formulaire */}
               <Link onClick={contactModal}>Contact</Link>
+            </Nav.Link>
+
+            <Nav.Link className={`${classes.nav__link} me-4`}>
+              <Link onClick={signUpModal}>Sign Up</Link>
+            </Nav.Link>
+
+            <Nav.Link className={`${classes.nav__link} me-4`}>
+              <Link onClick={loginModal}>Login</Link>
             </Nav.Link>
 
             <Nav.Link href='#buttons' className={`${classes.nav__link}`}>
@@ -82,6 +107,18 @@ const TheNavbar = (props) => {
       {showModal && (
         <Modal>
           <Form onCloseContact={closeModal} />
+        </Modal>
+      )}
+
+      {showSignUpModal && (
+        <Modal>
+          <SignUp onCloseSignUp={closeSignUpModal} />
+        </Modal>
+      )}
+
+      {showLoginModal && (
+        <Modal>
+          <Login onCloseLogin={closeLoginModal} />
         </Modal>
       )}
     </>
