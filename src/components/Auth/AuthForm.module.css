@@ -1,0 +1,80 @@
+/* AuthForm.module.css */
+
+.formContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 500px;
+  margin-top: 50px;
+}
+
+.formTitle {
+  font-size: 40px;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.formTitle::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 90px;
+  background-color: var(--primaryitemcolor);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup input[type='email'],
+.formGroup input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.toggleButton {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: rgb(245, 10, 10);
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.toggleButton:hover {
+  text-decoration: underline;
+}
+
+.formButton {
+  width: 200px; /* Largeur des boutons légèrement réduite pour compenser l'espacement */
+  padding: 10px;
+  font-size: 16px;
+  color: rgb(245, 10, 10);
+  background-color: var(--light);
+  border: 1px solid rgb(245, 10, 10);
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+.formButton + .formButton {
+  margin-left: 10px;
+}
+
+.formButton:hover {
+  background-color: rgb(245, 10, 10);
+  color: var(--light);
+}
+.buttonsContainer {
+  display: flex; /* Affichage en ligne des boutons */
+  justify-content: center; /* Espacement uniforme entre les boutons */
+  gap: 10px; /* Espacement entre les boutons */
+}

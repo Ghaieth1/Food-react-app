@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: center;
   margin-right: auto;
+  gap: 20px;
 }
 
 .navbar .nav__link {
@@ -51,6 +52,34 @@
 }
 
 .navbar .nav__link:hover {
+  color: black;
+}
+/* styles.css */
+/* styles.css */
+.loginLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid rgb(182, 181, 181); /* Couleur de la bordure */
+  padding: 5px 10px;
+  border-radius: 5px;
+  gap: 5px;
+  transition: transform 0.3s ease; /* Transition pour l'effet de transformation */
+}
+
+.loginLink:hover {
+  transform: scale(1.1);
+}
+
+.loginIcon {
+  font-size: 20px; /* Taille de l'icône */
+
+  margin-right: 5px; /* Espacement entre l'icône et le texte */
+  color: black;
+}
+
+.loginText {
+  font-size: 16px;
   color: black;
 }
 

@@ -5,38 +5,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-scroll';
 import Logo from '../../assets/Logo/Logo.png';
 import classes from './TheNavbar.module.css';
-import Modal from '../Ui/Modal.js'; // Importez votre composant de modal
+import Modal from '../Ui/Modal.js';
 import Form from './Form.jsx';
-import SignUp from '../Auth/SignUp.js';
-import Login from '../Auth/Login.js'; // Importez le composant de connexion
+import AuthForm from '../Auth/AuthForm';
+import { MdLogin, MdLogout } from 'react-icons/md';
+import Swal from 'sweetalert2';
 
 const TheNavbar = (props) => {
   const [showModal, setShowModal] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showAuthForm, setShowAuthForm] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const contactModal = () => {
     setShowModal(true);
   };
 
-  const signUpModal = () => {
-    setShowSignUpModal(true);
-  };
-
-  const loginModal = () => {
-    setShowLoginModal(true);
+  const authModal = () => {
+    setShowAuthForm(true);
   };
 
   const closeModal = () => {
     setShowModal(false);
   };
 
-  const closeSignUpModal = () => {
-    setShowSignUpModal(false);
+  const closeAuthForm = () => {
+    setShowAuthForm(false);
   };
 
-  const closeLoginModal = () => {
-    setShowLoginModal(false);
+  const login = () => {
+    setIsLoggedIn(true); // Mettre à jour l'état de connexion
+  };
+
+  const logout = () => {
+    setIsLoggedIn(false); // Mettre à jour l'état de connexion
+    // Afficher le message de déconnexion
+    Swal.fire({
+      title: 'Logged out',
+      text: 'You have been logged out successfully!',
+      icon: 'success',
+      confirmButtonText: 'OK',
+    });
   };
 
   return (
@@ -90,18 +98,23 @@ const TheNavbar = (props) => {
               <Link onClick={contactModal}>Contact</Link>
             </Nav.Link>
 
-            <Nav.Link className={`${classes.nav__link} me-4`}>
-              <Link onClick={signUpModal}>Sign Up</Link>
-            </Nav.Link>
-
-            <Nav.Link className={`${classes.nav__link} me-4`}>
-              <Link onClick={loginModal}>Login</Link>
-            </Nav.Link>
-
             <Nav.Link href='#buttons' className={`${classes.nav__link}`}>
               <NavCartButton onClick={props.onShowCart} />
             </Nav.Link>
           </Nav>
+          <Nav.Link>
+            {isLoggedIn ? ( // Condition pour afficher Login ou Logout
+              <Link onClick={logout} className={classes.loginLink}>
+                <MdLogout className={classes.loginIcon} />
+                <span className={classes.loginText}>Logout</span>
+              </Link>
+            ) : (
+              <Link onClick={authModal} className={classes.loginLink}>
+                <MdLogin className={classes.loginIcon} />
+                <span className={classes.loginText}>Login</span>
+              </Link>
+            )}
+          </Nav.Link>
         </Navbar.Collapse>
       </Navbar>
       {showModal && (
@@ -110,15 +123,9 @@ const TheNavbar = (props) => {
         </Modal>
       )}
 
-      {showSignUpModal && (
+      {showAuthForm && (
         <Modal>
-          <SignUp onCloseSignUp={closeSignUpModal} />
-        </Modal>
-      )}
-
-      {showLoginModal && (
-        <Modal>
-          <Login onCloseLogin={closeLoginModal} />
+          <AuthForm onCloseAuthForm={closeAuthForm} onLogin={login} />
         </Modal>
       )}
     </>

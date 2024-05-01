@@ -6,14 +6,13 @@ import CartProvider from './components/store/CartProvider';
 import TheFooter from './components/Footer/TheFooter';
 import Swal from 'sweetalert2';
 import Form from '../src/components/Header/Form';
-import SignUp from '../src/components/Auth/SignUp';
-import Login from '../src/components/Auth/Login'; // Importez le composant Login
+import AuthForm from '../src/components/Auth/AuthForm';
+import Modal from '../src/components/Ui/Modal';
 
 const App = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
-  const [showSignUpForm, setShowSignUpForm] = useState(false);
-  const [showLoginForm, setShowLoginForm] = useState(false); // Ajoutez un état pour gérer l'affichage de la modal de connexion
+  const [showModal, setShowModal] = useState(false);
 
   const onShowCartHandler = () => {
     setCartIsShown(true);
@@ -37,12 +36,12 @@ const App = () => {
     setShowContactForm(!showContactForm);
   };
 
-  const toggleSignUpForm = () => {
-    setShowSignUpForm(!showSignUpForm);
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
-  const toggleLoginForm = () => {
-    setShowLoginForm(!showLoginForm);
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -53,17 +52,16 @@ const App = () => {
       <TheNav
         onShowCart={onShowCartHandler}
         toggleContactForm={toggleContactForm}
-        toggleSignUpForm={toggleSignUpForm}
-        toggleLoginForm={toggleLoginForm} // Passez la fonction pour ouvrir ou fermer la modal de connexion
+        toggleModal={toggleModal} // Passez la fonction pour ouvrir ou fermer la modal
       />
       <Sections />
       <TheFooter />
       {showContactForm && <Form onOrder={onOrderHandler} />}
-      {showSignUpForm && <SignUp onCloseSignUp={toggleSignUpForm} />}
-      {showLoginForm && (
-        <Login onCloseLogin={toggleLoginForm} onShowSignUp={toggleSignUpForm} />
-      )}{' '}
-      {/* Affichez la modal de connexion lorsque showLoginForm est vrai */}
+      {showModal && (
+        <Modal>
+          <AuthForm onCloseAuth={closeModal} />
+        </Modal>
+      )}
     </CartProvider>
   );
 };
