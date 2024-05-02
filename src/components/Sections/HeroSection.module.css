@@ -105,6 +105,56 @@
     padding: 50px;
   }
 }
+@media only screen and (min-width: 600px) and (max-width: 1400px) {
+  .number__properties {
+    margin-top: 15%; /* Ajuster cette valeur selon vos besoins */
+    gap: 200px;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .number__properties .number__properties__text {
+    font-size: 15px;
+  }
+  .number__properties {
+    margin-top: 20%; /* Ajuster cette valeur selon vos besoins */
+    gap: 100px;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .number__properties .number__properties__text {
+    font-size: 12px;
+  }
+  .number__properties .number__properties__digit {
+    font-size: 24px;
+  }
+  .number__properties .img {
+    width: 50px;
+    padding: 10px;
+  }
+  .number__properties {
+    margin-top: -2%; /* Ajuster cette valeur selon vos besoins */
+    gap: 30px;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 800px) {
+  .number__properties .number__properties__text {
+    font-size: 12px;
+  }
+  .number__properties .number__properties__digit {
+    font-size: 24px;
+  }
+  .number__properties .img {
+    width: 50px;
+    padding: 10px;
+  }
+  .number__properties {
+    margin-top: -2%; /* Ajuster cette valeur selon vos besoins */
+    gap: 10px;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+}
 
 @media only screen and (max-width: 991px) {
   .text__div {
@@ -131,9 +181,5 @@
 
   .food__image {
     margin-top: 20px;
-  }
-
-  .number__properties {
-    display: block;
   }
 }

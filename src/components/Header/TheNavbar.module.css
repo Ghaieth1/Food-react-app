@@ -82,14 +82,48 @@
   font-size: 16px;
   color: black;
 }
+/* Media query pour les écrans de taille moyenne */
 
 @media only screen and (max-width: 1200px) {
   .navbar {
-    padding: 7px 1rem;
+    padding: 7px 1rem; /* Réduire le rembourrage */
   }
 
   .navbar .nav__linkgroup {
-    position: relative;
-    display: block;
+    display: block; /* Affichage en bloc */
+  }
+
+  .navbar .nav__link {
+    margin: 5px 0; /* Réduire l'espacement entre les liens */
+  }
+  .loginLink {
+    width: 10%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .loginLink {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .loginLink {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .loginLink {
+    width: 20%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .loginLink {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .loginLink {
+    width: 30%;
   }
 }

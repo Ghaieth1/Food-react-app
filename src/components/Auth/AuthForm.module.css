@@ -78,3 +78,38 @@
   justify-content: center; /* Espacement uniforme entre les boutons */
   gap: 10px; /* Espacement entre les boutons */
 }
+
+@media only screen and (max-width: 600px) {
+  .formContainer {
+    height: auto;
+    padding: 10px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+  }
+
+  .formTitle {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .formGroup input[type='email'],
+  .formGroup input[type='password'] {
+    padding: 8px;
+  }
+
+  .formButton {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .formTitle {
+    font-size: 25px;
+  }
+
+  .formGroup input[type='email'],
+  .formGroup input[type='password'] {
+    padding: 6px;
+  }
+}

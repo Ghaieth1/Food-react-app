@@ -55,6 +55,7 @@ const HeroFourSection = () => {
                 onClick={aboutModal}
                 width='1100px'
                 height='auto'
+                className={classes.hero_image}
               ></img>
             </Col>
           </Row>
